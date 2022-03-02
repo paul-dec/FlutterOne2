@@ -54,7 +54,7 @@ class _HomePageState extends State<HomePage> {
         drawer: MyDrawer(),
         body: Center(
           child: GridView.count(
-              crossAxisCount: 2,
+              crossAxisCount: MediaQuery.of(context).orientation == Orientation.landscape ? 4 : 2,
               children: List.generate(data.length, (index) {
                 return Center(
                     child: HeroCard(title: data[index]["img"]!, index: index,)
