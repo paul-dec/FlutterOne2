@@ -25,15 +25,16 @@ class _MapPageState extends State<MapPage> {
         ),
         drawer: const MyDrawer(),
         body: Center(
-            child: CarouselSlider(
-              options: CarouselOptions(
-                height: 500.0,
-                enableInfiniteScroll: false
-              ),
-              items: [1,2,3,4,5,6].map((i) {
-                return Builder(
-                  builder: (BuildContext context) {
-                    return Container(
+            child: SingleChildScrollView(
+              child: CarouselSlider(
+                options: CarouselOptions(
+                    height: 500.0,
+                    enableInfiniteScroll: false
+                ),
+                items: [1,2,3,4,5,6].map((i) {
+                  return Builder(
+                    builder: (BuildContext context) {
+                      return Container(
                         width: MediaQuery.of(context).size.width,
                         margin: const EdgeInsets.symmetric(horizontal: 5.0),
                         child: Column(
@@ -42,12 +43,13 @@ class _MapPageState extends State<MapPage> {
                             Text('Arena $i', style: ThemeText.whiteTextBold,)
                           ],
                         )
-                    );
-                  },
-                );
-              }).toList(),
+                      );
+                    },
+                  );
+                }).toList(),
+              ),
             )
-        )
+        ),
     );
   }
 }

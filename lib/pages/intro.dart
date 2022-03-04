@@ -25,29 +25,31 @@ class _IntroState extends State<Intro> {
         ),
         drawer: const MyDrawer(),
         body: Center(
-            child: Column(
-              children: [
-                Stack(
-                  alignment: Alignment.center,
-                  children: [
-                    Container(
-                      height: 400,
-                      width: 300,
-                      decoration: BoxDecoration(
-                        color: Colors.blueAccent,
-                        borderRadius: BorderRadius.circular(20)
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  Stack(
+                    alignment: Alignment.center,
+                    children: [
+                      Container(
+                        height: 400,
+                        width: 300,
+                        decoration: BoxDecoration(
+                            color: Colors.blueAccent,
+                            borderRadius: BorderRadius.circular(20)
+                        ),
                       ),
-                    ),
-                    SizedBox(
-                      height: 500,
-                      width: 400,
-                      child: Image.asset("assets/king_intro.png"),
-                    )
-                  ],
-                ),
-                const Text("Discover Clash Royale", style: ThemeText.whiteTextBold),
-                const Text("Win with a powerfull deck", style: ThemeText.littleWhiteText,)
-              ],
+                      SizedBox(
+                        height: 500,
+                        width: 400,
+                        child: Image.asset("assets/king_intro.png"),
+                      )
+                    ],
+                  ),
+                  const Text("Discover Clash Royale", style: ThemeText.whiteTextBold),
+                  const Text("Win with a powerfull deck", style: ThemeText.littleWhiteText,)
+                ],
+              ),
             )
         )
     );

@@ -131,27 +131,29 @@ class _ProfilePageState extends State<ProfilePage> {
         backgroundColor: ThemeColor.xPurple,
       ),
       drawer: const MyDrawer(),
-      body: Column(
-        children: [
-          SizedBox(height: 10,),
-          SizedBox(
-            height: 200,
-            width: 200,
-            child: (_file.path == "zz")
-                ? Image.asset("assets/user.png", fit: BoxFit.cover,)
-                : (kIsWeb)
-                ? Image.memory(webImage, fit: BoxFit.cover,)
-                : Image.file(_file, fit: BoxFit.cover,),
-          ),
-          const SizedBox(
-            height: 20,
-            width: double.infinity,
-          ),
-          Column(
-            children: imageWidget(),
-          )
-        ],
-      ),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            SizedBox(height: 10,),
+            SizedBox(
+              height: 200,
+              width: 200,
+              child: (_file.path == "zz")
+                  ? Image.asset("assets/user.png", fit: BoxFit.cover,)
+                  : (kIsWeb)
+                  ? Image.memory(webImage, fit: BoxFit.cover,)
+                  : Image.file(_file, fit: BoxFit.cover,),
+            ),
+            const SizedBox(
+              height: 20,
+              width: double.infinity,
+            ),
+            Column(
+              children: imageWidget(),
+            )
+          ],
+        ),
+      )
     );
   }
 }
